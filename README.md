@@ -1,34 +1,26 @@
 # Ml::Service::Sort
 
-Service enambling sorting for ml-forest (https://github.com/forest-implementation/ml-forest)
+Service enabling sorting for ml-forest (https://github.com/forest-implementation/ml-forest)
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+First get ruby (e.g. [rbenv](https://github.com/rbenv/rbenv)) and [bundler](https://bundler.io/docs.html)
 
-Install the gem and add to the application's Gemfile by executing:
+(Optional) Create your gem
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle gem mygem
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+Add dependency for the forest
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add ml-forest --github=forest-implementation/ml-forest
+
+Add dependency for this service
+
+    $ bundle add ml-service-sort --github=forest-implementation/ml-service-sort
+
 
 ## Usage
 
-For example of usage please refer to example project.
-
-Simple usage on ml-forest could look like this
-
-1. install ml-forest alongside with this service
-
-Gemfile
-```Ruby
-gem "ml-forest"
-gem "ml-service-sort"
-```
-
-usage
 ```ruby
 require "ml/forest"
 require "ml/service/sort/quicksort"
@@ -39,11 +31,6 @@ sorted = forest.trees.first.to_a.flatten
 # sorted: [2, 3, 4, 5, 7, 8]
 ```
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 

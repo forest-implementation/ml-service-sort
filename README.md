@@ -26,7 +26,9 @@ require "ml/forest"
 require "ml/service/sort/quicksort"
 
 forest = Ml::Forest::Tree.new([5, 8, 3, 4, 2, 7] , trees_count: 1, forest_helper: Ml::Service::Sort::QuickSort.new)
-sorted = forest.trees.first.to_a.flatten
+sorted_tree = forest.trees.first
+
+pp Ml::Forest::Tree.flat(sorted_tree)
 
 # sorted: [2, 3, 4, 5, 7, 8]
 ```
@@ -34,4 +36,4 @@ sorted = forest.trees.first.to_a.flatten
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ml-service-sort.
+Bug reports and pull requests are welcome on GitHub at https://github.com/forest-implementation/ml-service-sort.

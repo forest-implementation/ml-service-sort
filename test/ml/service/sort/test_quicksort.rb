@@ -12,6 +12,6 @@ class TestServiceQuicksort < Minitest::Test
     input = [5, 8, 3, 4, 2, 7]
     forest = Ml::Forest::Tree.new(input, trees_count: 1, forest_helper: Ml::Service::Sort::QuickSort.new)
     res = forest.trees.first
-    assert_equal Ml::Service::Sort::QuickSort.prettify(res), [2, 3, 4, 5, 7, 8, nil]
+    assert_equal Ml::Forest::Tree.flat(res), [2, 3, 4, 5, 7, 8]
   end
 end

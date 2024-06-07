@@ -24,18 +24,7 @@ module Ml
 
         def end_condition(data)
           data.all? { |x| x == data.first }
-        end
-      
-        def self.prettify(tree)
-          (tree.branches.values.map do |inout| 
-            case inout
-              in Node::OutNode
-                 inout.data[0]
-              in Node::InNode
-                prettify(inout)
-            end
-          end).flatten
-        end       
+        end      
       end
     end
   end
